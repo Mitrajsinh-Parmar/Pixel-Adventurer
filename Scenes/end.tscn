@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://blbi4bvnunlst"]
+
+[ext_resource type="Script" path="res://Scenes/end.gd" id="1_rngcn"]
+[ext_resource type="Texture2D" uid="uid://by06jo82lvev0" path="res://Pixel Adventure Assets/Items/End (Idle).png" id="2_uo5qd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfe4a"]
+size = Vector2(32.2559, 44.3429)
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(979, 547)
+script = ExtResource("1_rngcn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8.00006, -9)
+scale = Vector2(1.95313, 2.1875)
+texture = ExtResource("2_uo5qd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.49994, 13.5)
+scale = Vector2(1.95313, 2.1875)
+shape = SubResource("RectangleShape2D_tfe4a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
